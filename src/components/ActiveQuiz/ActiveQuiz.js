@@ -1,22 +1,23 @@
 import React, {Component} from "react";
 import styles from './ActiveQuiz.module.scss'
+import AnswersList from "./AnswersList/AnswersList";
 
 const ActiveQuiz = props => {
     return (
         <div className={styles.ActiveQuiz}>
             <p className={styles.Question}>
             <span>
-                <strong>1.</strong>&nbsp;
-                How are u?
+                <strong>{props.answerNumber}.</strong>&nbsp;
+                {props.question}
             </span>
-                <small>1 of 2</small>
+                <small>{props.answerNumber} of {props.quizLength}</small>
             </p>
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-            </ul>
+
+            <AnswersList
+                answers={props.answers}
+                onAnswerClick={props.onAnswerClick}
+
+            />
         </div>
     )
 
