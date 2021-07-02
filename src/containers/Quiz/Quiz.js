@@ -31,6 +31,17 @@ class Quiz extends Component {
                     {id: 3, text: '0,6666'},
 
                 ]
+            },
+            {
+                id: 3,
+                rightAnswerId: 1,
+                question: 'Tan is cosine over...',
+                answers: [
+                    {id: 1, text: 'sine'},
+                    {id: 2, text: 'arcsine'},
+                    {id: 3, text: 'cotangent'},
+
+                ]
             }
         ]
     }
@@ -88,6 +99,10 @@ class Quiz extends Component {
             isFinished: false,
             results: {}
         })
+    }
+
+    componentDidMount() {
+        console.log('quiz id= ', this.props.match.params.id)
     }
 
     render() {
